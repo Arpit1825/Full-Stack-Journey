@@ -99,7 +99,9 @@ button {
     font-weight: bold;
     margin-top: 10px;
 }
-
+ a:hover{
+    color:cadetblue
+}
 button:hover {
     background-color: #009688;
     color: white;
@@ -113,6 +115,9 @@ footer {
     margin-top: 20px;
 }
 
+footer a:hover{
+    color:grey;
+}
 footer a {
     color: aquamarine;
 }
