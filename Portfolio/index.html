@@ -1,72 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-    <header>
-    <h1>Welcome to My Portfolio Website!</h1>
+    <nav>
+   <ul> <li><a href="#" target="_blank">Home</a></li>
+    <li><a href="#" target="_blank">About</a></li>
+    <li><a href="#" target="_blank">Contact</a></li>
+</ul>
+ </nav> 
+  <h1>Welcome to My Portfolio Website!</h1>
+  <br>
+        <a href="https://github.com/Arpit1825" target="_main" ><img src="abc.jpg" alt="Profile Image" height="240" class="circular"></a>
     <br>
-    <a href="https://github.com/Arpit1825" target="_main"><img src="erp.jpeg" alt="Profile Image"height="240"></a>    <br>
-    <h2>ARPIT VERMA<br>B.Tech – Computer Science (AIML)<br>AKTU University</h2>
+        <header>
+        <h2 class="mine">ARPIT VERMA<br><span>B.Tech - CS (AIML) | AKTU University</span></h2>
     </header>
     <main>
-    <h3>I am a passionate Computer Science student who loves turning ideas into real-world projects using web technologies. My focus is on learning, experimenting, and building clean, user-friendly websites while growing my knowledge in AI and software development.</h3>
-    <h2>Github Profile :<a href="https://github.com/Arpit1825" target="_main">Click here</a></h2>
-    <hr>
-    <div>
-    Go to My educational details: <a href="/Portfolio/education.html">Education</a>
-    <br>
-    Check Experiences<a href="/Portfolio/experience.html">Experience</a> 
-    <br>
-    Go to Skills:<a href="/Portfolio/skills.html">Skills</a>
-    <br>
-    Projects :<a href="/Portfolio/project.html">Click Here</a>
-    <hr>
+        <section id="intro-text">
+            <h3>I am a passionate Computer Science student who loves turning ideas into real-world projects using web
+            technologies. My focus is on learning, experimenting, and building clean, user-friendly websites while
+            growing my knowledge in AI and software development.</h3>
+        <p><strong>Github Profile :</strong><a href="https://github.com/Arpit1825" target="_main">Click here</a></p>
+        </section>
+
+
+        <hr>
+
+
+        <section class="links-section">
+            <p>Go to My educational details: <a href="/Portfolio/education.html">Education</a></p>
+           <p> Check Experiences: <a href="/Portfolio/experience.html">Experience</a>
+            </p>
+            <p>Go to Skills: <a href="/Portfolio/skills.html">Skills</a>
+           </p>
+           <p> Projects :<a href="/Portfolio/project.html">Click Here</a></p>
+</section>
+
+<hr>
+
+
+        <section id="contact">
+            <h3>Contact Me</h3>
+            <form>
+                <div class="form-group">
+                    <label for="fullname">Name:</label>
+                    <input type="text" id="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason:</label>
+                    <select id="reason">
+                        <option>Hiring</option>
+                        <option>Freelance Project</option>
+                        <option>General Query</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="msg">Message:</label><br>
+                    <textarea id="msg" rows="5" placeholder="Type your message..."></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
-    <footer>
-     Visit My Profile: 
-    <a href="https://www.linkedin.com/in/arpit-verma-687b3b332/" target="_main">Linkedin</a>
-    <br>
-    Connect with us:
-    <a href="https://www.instagram.com" target="_main">Instagram</a>
-        <br>
-    </div>
-    <hr>
-   <section id="about">
-    <h3>Contact me Form</h3>
-        <form>
-            <label for id="101">
-            Name : <input type="text" placeholder="Enter your full name!" id="101" required>
-            </label>
-            <br>
-            <br>
-             <label for id="102">
-            Enter your Email:
-            <input type="email" value="" name="email" placeholder="email" id="102" required>
-            <select>
-                <option>Select</option>
-                <option>
-                    Hiring
-                </option>
-                <option>Freelance Project</option>
-                <option>Open Source</option>
-            </select>
-            </label>
-            <br>
-            <br>
-           <br>
-           <label for id="300">
-            <textarea type="text" placeholder="Enter your message!" rows="5" cols="50" ></textarea>
-            <button type="submit">Submit
-                </button>
-           </label>
-        </form>
-    </section>
-    </footer>
-   
+         <footer>
+        <p>Connect us on: <a href="https://www.linkedin.com/in/arpit-verma-687b3b332/" target="_main">Linkedin</a> | <a href="https://www.instagram.com" target="_main">Instagram</a></p>
+        <p> &copy; 2026 Arpit Verma</p>
+        </footer>
+
 </body>
 <hr>
+
 </html>
