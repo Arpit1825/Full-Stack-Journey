@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-h1{
-    text-align: center;
-}
 body {
     font-family: 'Poppins', sans-serif;
     color: black;
@@ -43,6 +40,7 @@ header {
 }
 
 h1 {
+      text-align: center;
     font-family: "Special Gothic Expanded One", sans-serif;
     font-size: 36px;
     margin-bottom: 20px;
@@ -120,4 +118,48 @@ footer a:hover{
 }
 footer a {
     color: aquamarine;
+}
+.card{
+    background-color:white;
+    padding:25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-left: 5px solid #009688;
+    margin-bottom: 10px;
+}
+.tech-stack {
+    color: dimgray;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+ul li{
+    margin-left: 35px;
+    margin-bottom: 5px;
+}
+.project-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 30px;
+    padding: 10px;
+}
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    main {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .circular {
+        width: 150px;
+        height: 150px;
+    }
 }
