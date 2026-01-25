@@ -1,7 +1,5 @@
-console.log("Heyy Arpit Here");
-
-const x=10;
-let myname="Arpit";
-let role="Aspiring Full Stack Developer";
-
-console.log("I am "+myname+" an "+role+".");
+const btn=document.getElementById('butn');
+button.addEventListener('click', function() {
+    alert("Badhiya Arpit Bhai! Events kaam kar rahe hain. 🚀");
+    console.log("Button was clicked successfully.");
+});
