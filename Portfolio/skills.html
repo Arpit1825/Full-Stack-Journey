@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    body{
-            background-color:#AFDDE5;
-        }</style>
+        body {
+        font-family: Arial, sans-serif;
+       background-color: rgb(231, 203, 245);
+        color: #333;
+        padding: 20px;
+        transition: 0.3s;
+    }
+
+    .dark-mode {
+        background-color: #1a1a1a ;
+        color: #f5f5f5 ;
+    }
+    
+    .dark-mode a {
+        color: #4dabf7 ;
+    }
+    
+        </style>
 </head>
 <body>
     <h1>Technical Skills</h1>
@@ -34,6 +49,16 @@
         </p>
     </li>
     </ul>
-    
+    <script>
+    console.log("Script chal padi hai!");
+
+   
+    const savedTheme = localStorage.getItem('theme');
+    console.log("Memory me kya hai:", savedTheme);
+
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
 </body>
 </html>
