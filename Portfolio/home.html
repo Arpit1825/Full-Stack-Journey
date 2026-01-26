@@ -46,7 +46,17 @@ h1{
         <p>ARPIT VERMA</p><span><p>B.Tech - CS (AIML) | AKTU University</p></span>
     </header>
     <footer>Aspiring FullStack Developer</footer>
+     <script>
+    console.log("Script chal padi hai!");
 
+   
+    const savedTheme = localStorage.getItem('theme');
+    console.log("Memory me kya hai:", savedTheme);
+
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
 </body>
 
 </html>
