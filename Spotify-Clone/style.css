@@ -4,26 +4,30 @@
 }h1{
     margin-bottom: 40px;
 }nav{
+    color: grey;
     position:sticky;
 }
-
+.nav-items{
+    font-weight:600;
+}
 body{
     height:1280px;
-    font-family: 'Poppins', 'Inter', 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color:white;
     background-color: rgb(18, 18, 18);
 }
-nav img{
-    height:40px;
-    width:36px;
+
+.spot{
+    font-size: 22px;
+    margin-left: 1px;
+    margin-top:15px;
+}
+ .logo img{
+    height:36px;
+    width: 44px;
     margin-left:10px;
     margin-top:10px;
     padding:0px;
-}
-.spot{
-    font-size: 22px;
-    margin-left: 13px;
-    margin-top:15px;
 }
 li{
     list-style: none;
@@ -81,8 +85,15 @@ input{
     display:flex;
     flex-direction: row;
     justify-content: center;
-    width:20px;
-    cursor:pointer;
+align-items: center;
+}
+.icons svg {
+    cursor: pointer;      /* Mouse hand ban jayega */
+    transition: 0.3s;     /* Hover karne par smooth effect */
+}
+.masterPlay:hover {
+    transform: scale(1.1); /* Mouse le jane par thoda bada ho jayega */
+    fill: #1db954;         /* Spotify Green color (Optional) */
 }
 .homeandabout{
     display: flex;
@@ -93,14 +104,56 @@ input{
     gap:70px;
     flex:1;
 }
-.songclasscontainer{
-    margin-bottom: 90px;
-    justify-content: center;
+/* .songrow2,.songrow1{
+    margin-bottom: 50px;
+ justify-content:space-between;
     margin-left: 20px;
     margin-right: 20px;
    background-color: rgb(18, 18, 18);
     display:flex;
     flex-flow: wrap;
     flex-direction: row;
-    grid-gap:20px;
+    grid-gap:20px;   
+} */
+ .songclasscontainer{
+    gap:25px;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin: 20px;
+    display:flex;
+    flex-flow:wrap;
+    flex-direction: row;
+    /* grid-gap:20px;  */
+ }
+ 
+.container {
+    display: flex;
+    height: calc(100vh - 80px);
+    background-color: black;
+    
+}
+
+.leftcontainer{
+    width: 25%; 
+    background-color: #121212;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.resizer {
+    width: 5px;       
+    background:transparent; 
+    z-index: 10;
+    cursor: col-resize;
+    transition: background 0.2s;
+}
+
+.resizer:hover {
+    background-color: #1db954; 
+}
+
+.rightcontainer {
+    flex: 1; 
+    background-color: #121212;
+    border-radius: 8px;
 }
