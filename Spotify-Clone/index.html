@@ -1,72 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Spotify-Clone</title>
 </head>
 <body>
     <nav class="nav-items">
-       <ul>
-        <li class="logo"><img src="logo.svg" alt="Spotify Logo"></li>
-        <li class="spot" id="upper">Spotify</li>
-        <div class="homeandabout">
-        <li class="homeandsearch" >Home</li>
-        <li ><input type="text" placeholder=" What do you want to play?"></li>
-        <li class="homeandsearch">About</li>
-        </div>
-       </ul>
-    </nav>
-    <main>
-        <!-- <section class="welcome">Welcome to Spotify Clone <h2>One of the best NC'S Songs</h2></section> -->
-       <div class="container">
-         <div class="leftcontainer" id="sidebar"></div>
-         <div class="resizer" id="dragHandle"></div>
-        <div class="rightcontainer"> <div class="songclasscontainer">
-            <!-- <div class="songrow1"> -->
-                <div class="first"><img src="/Spotify-Clone/covers/1.jpg"></div>
-            <div class="second"><img src="/Spotify-Clone/covers/2.jpg"></div>
-            <div class="third"><img src="/Spotify-Clone/covers/3.jpg"></div>
-            <div class="fourth"><img src="/Spotify-Clone/covers/4.jpg"></div>
-        <div class="fifth"><img src="/Spotify-Clone/covers/5.jpg"></div>
-    <!-- </div> -->
-    <!-- <div class="songrow2"> -->
-            <div class="six"><img src="/Spotify-Clone/covers/6.jpg"></div>
-            <div class="seven"><img src="/Spotify-Clone/covers/7.jpg"></div>
-            <div class="eight"><img src="/Spotify-Clone/covers/8.jpg"></div>
-            <div class="nine"><img src="/Spotify-Clone/covers/9.jpg"></div>
-            <div class="ten"><img src="/Spotify-Clone/covers/10.jpg"></div>
-    <!-- </div> -->
+        <ul>
+            <li class="logo"><img src="logo.svg" alt="Spotify Logo"></li>
+            <li class="spot" id="upper">Spotify</li>
             
-        </div></div>
-       </div>
+            <div class="homeandabout">
+                <li class="homeandsearch">Home</li>
+                <li><input type="text" placeholder="What do you want to play?"></li>
+                <li class="homeandsearch">About</li>
+            </div>
+
+            <div class="upgrade-section">
+                <ul>
+                    <li><a href="#">Premium</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Download</a></li>
+                </ul>
+            </div>
+
+            <div class="signup">
+                <p>SignUp</p>
+            </div>
+            <div class="Login">
+                <button type="button" class="login">Login</button>
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="leftcontainer" id="sidebar">
+                <p class="lib">Your Library</p>
+                <div class="left-cont1">
+                    <h3>Create your first Playlist</h3>
+                    <p>It's easy, we'll help you</p>
+                    <button type="button" class="playlist" id="playlist">Create Playlist</button>
+                </div>
+                <div class="left-cont2">
+                    <h3>Let's find some podcasts to follow</h3>
+                    <p>We'll keep you updated on new episodes</p>
+                    <button type="button" class="podcasts" id="podcasts">Browse podcasts</button>
+                </div>
+            </div>
+
+            <div class="resizer" id="dragHandle"></div>
+
+            <div class="rightcontainer">
+                <div class="songclasscontainer">
+                    
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/1.jpg" alt="Cover 1">
+                        <h4>Warriyo - Mortals</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/2.jpg" alt="Cover 2">
+                        <h4>Cielo - Huma-Huma</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/3.jpg" alt="Cover 3">
+                        <h4>Deaf Kev</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/4.jpg" alt="Cover 4">
+                        <h4>Different Heaven</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/5.jpg" alt="Cover 5">
+                        <h4>Janji - Heroes</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/6.jpg" alt="Cover 6">
+                        <h4>Salam-e-Ishq</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/7.jpg" alt="Cover 7">
+                        <h4>Sakhiyaan</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/8.jpg" alt="Cover 8">
+                        <h4>Bhula Dena</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/9.jpg" alt="Cover 9">
+                        <h4>Tumhari Kasam</h4>
+                    </div>
+
+                    <div class="card">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <img src="/Spotify-Clone/covers/10.jpg" alt="Cover 10">
+                        <h4>Na Jaana</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </main>
+
     <div class="bottom">
         <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100" class="myProgressBar">
         
         <div class="icons">
-        <div class="icons">
-    <svg id="previous" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="white">
-        <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
-    </svg>
+            <svg id="previous" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="white" style="cursor: pointer;">
+                <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+            </svg>
 
-    <svg class="masterPlay" id="class="masterPlay"" xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 24 24" fill="white">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-    </svg>
+            <svg class="masterPlay" id="masterPlay" xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 24 24" fill="white" style="cursor: pointer;">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
 
-    <svg id="next" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="white">
-        <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
-    </svg>
-</div>
-    </div>
+            <svg id="next" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="white" style="cursor: pointer;">
+                <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+            </svg>
+        </div>
         
         <div class="songInfo">
-            <img src="playing.gif" width="42px" alt="" id="gif"> 
+            <img src="playing.gif" width="42px" alt="" id="gif" style="opacity: 0; transition: opacity 0.4s ease-in;"> 
             <span id="masterSongName">Warriyo - Mortals</span>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
