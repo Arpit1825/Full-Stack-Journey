@@ -10,8 +10,8 @@ console.log(songs);
 let songItems=Array.from(document.getElementsByClassName('songItem'));
 
 
-const sidebar = document.getElementById('sidebar'); // HTML mein id="sidebar" hona chahiye
-const resizer = document.getElementById('dragHandle'); // HTML mein id="dragHandle" hona chahiye
+const sidebar = document.getElementById('sidebar');
+const resizer = document.getElementById('dragHandle'); 
 
 let isResizing = false;
 
@@ -19,25 +19,23 @@ let isResizing = false;
 resizer.addEventListener('mousedown', (e) => {
     isResizing = true;
     
-    // 🔥 Fix: Text selection rokne ke liye
+    
     e.preventDefault(); 
     
     document.body.style.cursor = 'col-resize';
-    console.log("Resizing shuru!"); // Console mein check karna ye print hua ya nahi
+    console.log("Resizing shuru!");
 });
 
-// Mouse hilaya
+
 document.addEventListener('mousemove', (e) => {
     if (!isResizing) return;
 
-    // 🔥 Fix: Selection glitch rokna
     e.preventDefault();
 
-    // Width update karo
+    
     sidebar.style.width = e.clientX + 'px';
 });
 
-// Mouse chhoda
 document.addEventListener('mouseup', () => {
     isResizing = false;
     document.body.style.cursor = 'default';
