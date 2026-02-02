@@ -56,7 +56,7 @@ ul {
     justify-content: center;
     align-items: center;
     flex: 1;
-    gap: 20px;
+    gap: 10px;
 }
 
 .homeandsearch {
@@ -79,9 +79,9 @@ input {
     color: white;
 }
 
-.upgrade-section {
-    display: flex;
-    gap: 20px;
+.upgrade-section li{
+    margin-right: 5cap;
+    margin-left: 10px;
 }
 
 .upgrade-section a {
@@ -301,8 +301,9 @@ input {
 }
 
 #myProgressBar {
-    width: 60%;
+    width: 50%;
     cursor: pointer;
+    padding: 0px;
     margin-top: 10px;
 }
 
@@ -317,4 +318,8 @@ input {
 .songInfo img {
     opacity: 0;
     transition: opacity 0.4s ease-in;
+}
+.image-appear{
+    margin:5px;
+    padding:5px;
 }
