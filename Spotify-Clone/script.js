@@ -10,7 +10,7 @@ console.log(songs);
 let songItems=Array.from(document.getElementsByClassName('songItem'));
 
 
-const sidebar = document.getElementById('sidebar'); 
+const sidebar = document.getElementById('sidebar');
 const resizer = document.getElementById('dragHandle'); 
 
 let isResizing = false;
@@ -23,7 +23,10 @@ resizer.addEventListener('mousedown', (e) => {
     e.preventDefault(); 
     
     document.body.style.cursor = 'col-resize';
+
     console.log("Resizing shuru!"); 
+
+    console.log("Resizing shuru!");
 });
 
 
@@ -36,7 +39,6 @@ document.addEventListener('mousemove', (e) => {
    
     sidebar.style.width = e.clientX + 'px';
 });
-
 
 document.addEventListener('mouseup', () => {
     isResizing = false;
