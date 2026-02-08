@@ -388,66 +388,114 @@ img {
     color: aliceblue;
 }
 
-@media screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
     .leftcontainer {
         display: none;
     }
+
     .rightcontainer {
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
+
     .spot {
         display: none;
     }
-    input {
-        width: 200px;
-    }
-}
 
-@media screen and (max-width: 800px) {
-    .songInfo {
-        display: none;
-    }
-    .time-container {
-        width: 90%;
-        max-width: none;
-    }
-    .icons {
-        width: 100%;
-        justify-content: center;
-    }
-}
-@media only screen and (max-width: 1100px) {
     body {
         background-color: black;
         color: white;
     }
 
-    .songList {
-        position: relative;
+    .container {
+        min-height: 100vh;
         width: 100%;
-        margin-bottom: 150px;
     }
+
+    .songList {
+        margin-bottom: 170px;
+        padding: 10px;
+    }
+
     .bottom {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 140px;
+        height: 160px;
         background-color: #000;
-        z-index: 9999;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 10000;
         border-top: 1px solid #333;
         padding: 10px 0;
     }
 
+    .songInfo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .songInfo img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 12px;
+        border: 2px solid #1db954;
+    }
+
+    #masterSongName {
+        font-size: 15px;
+        font-weight: 600;
+        max-width: 220px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .icons {
-        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .icons i, .icons svg {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    #masterPlay {
+        transform: scale(1.5);
+    }
+
+    .time-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        gap: 8px;
     }
 
     #myProgressBar {
         width: 80%;
+        height: 4px;
+        cursor: pointer;
+        accent-color: #1db954;
+    }
+
+    #time, #totaltime {
+        font-size: 11px;
+        color: #b3b3b3;
+        min-width: 35px;
+        text-align: center;
     }
 }
