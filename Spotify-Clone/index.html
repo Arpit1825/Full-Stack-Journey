@@ -52,6 +52,16 @@
                     <p>We'll keep you updated on new episodes</p>
                     <button type="button" class="podcasts" id="podcasts">Browse podcasts</button>
                 </div>
+                <div class="libfoot">
+                    <ul>
+                        <li>Legal</li>
+                        <li>Safety & Privacy Center</li>
+                        <li>Privacy Policy</li>
+                        <li>Cookies</li>
+                        <li>About Ads</li>
+                        <li>Accessibility</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="resizer" id="dragHandle"></div>
@@ -122,10 +132,15 @@
             </div>
         </div>
     </main>
-
+    <input type="volume">
     <div class="bottom">
-        
-        <div class="icons">
+        <div class="songInfo">
+    <div class="bottom-profile">
+    <img src="/Spotify-Clone/covers/1.jpg" alt="Cover 1">
+ </div>
+    <span id="masterSongName"><span>FAVELA</span></span>
+</div>
+ <div class="icons">
             <svg id="previous" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="white" style="cursor: pointer;">
                 <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
             </svg>
@@ -138,15 +153,12 @@
                 <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
             </svg>
         </div>
- <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100" class="myProgressBar">
-         <div class="songInfo">
-    <div class="bottom-profile">
-    <img src="/Spotify-Clone/covers/1.jpg" alt="Cover 1">
- </div>
-    <span id="masterSongName"><span>FAVELA</span></span>
-</div>
+        <div class="time-container">
+            <span id="time">0:00</span>
+            <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100" class="myProgressBar">
+            <span id="totaltime">0:00</span>
+        </div>
     
-   
     
     <script src="script.js"></script>
 </body>

@@ -11,6 +11,14 @@ console.log("Total Cards Found:", songItems.length);
 const sidebar = document.getElementById('sidebar');
 const resizer = document.getElementById('dragHandle'); 
 
+
+document.querySelector(".login").addEventListener("click", ()=>{
+    alert("Login Feature is currently under development! Stay tuned.");
+});
+
+document.querySelector(".signup").addEventListener("click", ()=>{
+    alert("Sign Up Feature coming soon!");
+});
 let isResizing = false;
 
 
@@ -82,13 +90,34 @@ masterplay.addEventListener("click",()=>{
 // console.log(myProgressBars);
 audioElement.addEventListener('timeupdate', ()=>{
    
-    progress = parseInt((audioElement.currentTime/audioElement.duration)* 100); 
+    progress = parseInt((audioElement.currentTime/audioElement.duration)*100); 
     myProgressBar.value = progress;
+    console.log(myProgressBar.value);
+    let currTime=audioElement.currentTime;
+    let min=Math.floor(currTime/60);
+    let sec=Math.floor(currTime%60);
+    if(sec<=9){
+        sec="0"+sec;
+    }
+    let strttime =document.querySelector("#time");
+    strttime.innerText=`${min}:${sec}`;
+});
+audioElement.addEventListener('loadedmetadata', ()=>{
+   
+    let totaldur=audioElement.duration;
+    let Totalmin=Math.floor(totaldur/60);
+    let Totalsec=Math.floor(totaldur%60);
+    if(Totalsec<=9){
+        Totalsec="0"+Totalsec;
+    }
+    let totaltime=document.querySelector("#totaltime")
+    totaltime.innerText=`${Totalmin}:${Totalsec}`;
 });
 
 myProgressBar.addEventListener('change', ()=>{
     
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
+    
 });
 
 
