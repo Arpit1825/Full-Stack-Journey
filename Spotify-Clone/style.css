@@ -5,7 +5,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html,body{
+    width: 100%;
+    overflow-x: hidden; 
+}
 body {
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
@@ -394,7 +397,6 @@ img {
     }
 
     .rightcontainer {
-        width: 100%;
         margin: 0;
         padding: 0;
     }
@@ -423,7 +425,7 @@ img {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 160px;
+        height: 70px;
         background-color: #000;
         display: flex;
         flex-direction: column;
@@ -435,22 +437,25 @@ img {
     }
 
     .songInfo {
-        display: flex;
+        display: inline-block;
         align-items: center;
         justify-content: center;
         margin-bottom: 10px;
         width: 100%;
     }
+   
 
     .songInfo img {
         width: 45px;
         height: 45px;
         border-radius: 50%;
         margin-right: 12px;
+        margin-top: 15px;
         border: 2px solid #1db954;
     }
 
     #masterSongName {
+        text-align: center;
         font-size: 15px;
         font-weight: 600;
         max-width: 220px;
@@ -460,6 +465,7 @@ img {
     }
 
     .icons {
+        height:22px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -474,6 +480,7 @@ img {
     }
 
     #masterPlay {
+        height:22px;
         transform: scale(1.5);
     }
 
@@ -497,5 +504,70 @@ img {
         color: #b3b3b3;
         min-width: 35px;
         text-align: center;
+    }
+}
+   @media only screen and (max-width: 500px) {
+    .bottom {
+        height: 110px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+    }
+    .songInfo {
+        width: 50%;
+        justify-content: flex-start;
+        margin-bottom: 0;
+        order: 1;
+        display: flex;
+    }
+
+    .songInfo img {
+        margin-top:0px;
+        width: 48px;
+        height: 48px;
+        margin-right: 8px;
+        border: none;
+    }
+
+    #masterSongName {
+        display: none;
+    }
+
+    .icons {
+        margin-top: 20px;
+        width: 50%;
+        justify-content:center;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 0;
+        order: 2;
+    }
+    .icons i {
+        font-size: 1.2rem;
+    }
+
+    #masterPlay {
+        font-size: 1.8rem;
+    }
+
+    .time-container {
+        width: 100%;
+        margin-top: 5px;
+        order: 3;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    #myProgressBar {
+        width: 40%;
+        height: 4px;
+    }
+
+    #time, #totaltime {
+        font-size: 10px;
+        margin: 0 5px;
     }
 }

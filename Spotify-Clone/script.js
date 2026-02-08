@@ -207,7 +207,6 @@ audioElement.addEventListener('ended', ()=>{
 let playbtn=document.querySelectorAll(".play-btn");
 playbtn.forEach((element) => {
     element.addEventListener("click",(e) =>{
-    console.log("Playing Song",songs[songIndex].songname);
     makeAllPlays();
     songIndex=parseInt(e.currentTarget.id);
     document.getElementById("masterSongName").innerText = songs[songIndex].songname;
