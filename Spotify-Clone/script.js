@@ -1,5 +1,3 @@
-console.log("Welcome to Spotify");
-
 let songIndex = 0; 
 let myProgressBar = document.getElementById('myProgressBar'); 
 // let gif = document.getElementById('gif'); 
@@ -17,7 +15,6 @@ let songs = [
     {songname: "Warrior-Marin Hox", filepath: "songs/10.mp3", coverpath: "covers/10.jpg"}
 ];
 let songItems=Array.from(document.getElementsByClassName('card'));
-console.log("Total Cards Found:", songItems.length);
 
 const sidebar = document.getElementById('sidebar');
 const resizer = document.getElementById('dragHandle'); 
@@ -40,10 +37,6 @@ resizer.addEventListener('mousedown', (e) => {
     e.preventDefault(); 
     
     document.body.style.cursor = 'col-resize';
-
-    console.log("Resizing shuru!"); 
-
-    console.log("Resizing shuru!");
 });
 
 
@@ -86,13 +79,11 @@ masterplay.addEventListener("click",()=>{
         activeIcon.classList.remove('fa-play');
         activeIcon.classList.add('fa-pause');
 
-        console.log("Audio Playing...");
      }else{
         // gif.style.opacity=0;
         audioElement.pause();
         makeAllPlays();
         masterpath.setAttribute("d",playPath);
-        console.log("Audio Paused...");
      }
 
 });
@@ -103,7 +94,6 @@ audioElement.addEventListener('timeupdate', ()=>{
    
     progress = parseInt((audioElement.currentTime/audioElement.duration)*100); 
     myProgressBar.value = progress;
-    console.log(myProgressBar.value);
     let currTime=audioElement.currentTime;
     let min=Math.floor(currTime/60);
     let sec=Math.floor(currTime%60);
@@ -149,8 +139,6 @@ prev.addEventListener('click', ()=>{
         }
         bottomImg.setAttribute("src",songs[songIndex].coverpath);
     document.getElementById("masterSongName").innerText = songs[songIndex].songname;
-    console.log("Song Changed!");
-    console.log("Playing Song",songs[songIndex].songname);
     masterpath.setAttribute("d",pausePath);
     audioElement.src = songs[songIndex].filepath;
 
@@ -173,9 +161,6 @@ next.addEventListener('click', ()=>{
         }
     bottomImg.setAttribute("src",songs[songIndex].coverpath);
     document.getElementById("masterSongName").innerText = songs[songIndex].songname;
-     console.log("Song Changed!");
-    console.log("Playing Song",songs[songIndex].songname);
-    // let img=document.querySelector(".bottom-profile");
     
 
     masterpath.setAttribute("d",pausePath);
