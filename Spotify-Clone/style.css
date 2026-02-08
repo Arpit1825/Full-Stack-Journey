@@ -473,7 +473,10 @@ img {
         margin-bottom: 12px;
         width: 100%;
     }
-
+.icons{
+        position:absolute; 
+        z-index: 10005;
+    }
     .icons i, .icons svg {
         cursor: pointer;
         transform: scale(1.2);
