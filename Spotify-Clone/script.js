@@ -67,26 +67,33 @@ const makeAllPlays = ()=>{
         icon.classList.add('fa-play');
     });
 }
-masterplay.addEventListener("click",()=>{
-     if(audioElement.paused || audioElement.currentTime <= 0){
-        // gif.style.opacity=1;
-        audioElement.play();
-        masterpath.setAttribute("d",pausePath);
-        
-        makeAllPlays();
-        let activeCard = document.getElementById(songIndex);
-        let activeIcon = activeCard.querySelector('i');
-        activeIcon.classList.remove('fa-play');
-        activeIcon.classList.add('fa-pause');
+masterplay.addEventListener("click", () => {
+    if (audioElement.paused || audioElement.currentTime <= 0) {
+        var playPromise = audioElement.play();
 
-     }else{
-        // gif.style.opacity=0;
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                masterpath.setAttribute("d", pausePath);
+                
+                makeAllPlays();
+                let activeCard = document.getElementById(songIndex);
+                if (activeCard) {
+                    let activeIcon = activeCard.querySelector('i');
+                    activeIcon.classList.remove('fa-play');
+                    activeIcon.classList.add('fa-pause');
+                }
+            })
+            .catch(error => {
+                console.log("Playback interrupted");
+            });
+        }
+    } else {
         audioElement.pause();
+        masterpath.setAttribute("d", playPath);
         makeAllPlays();
-        masterpath.setAttribute("d",playPath);
-     }
-
+    }
 });
+
 
 // let myProgressBars=document.querySelector("#myProgressBar");
 // console.log(myProgressBars);
