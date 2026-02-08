@@ -3,8 +3,19 @@ console.log("Welcome to Spotify");
 let songIndex = 0; 
 let myProgressBar = document.getElementById('myProgressBar'); 
 // let gif = document.getElementById('gif'); 
-let audioElement = new Audio('/Spotify-Clone/songs/1.mp3');
-let songs=[{songname:"FAVELA",filepath:"/Spotify-Clone/songs/1.mp3",coverpath:"/Spotify-Clone/covers/1.jpg"},{songname:"Fearless Funk",filepath:"/Spotify-Clone/songs/2.mp3",coverpath:"/Spotify-Clone/covers/2.jpg"},{songname:"Fly High",filepath:"/Spotify-Clone/songs/3.mp3",coverpath:"/Spotify-Clone/covers/3.jpg"},{songname:"ALL IN MY HIGH",filepath:"/Spotify-Clone/songs/4.mp3",coverpath:"/Spotify-Clone/covers/4.jpg"},{songname:"Where We Are",filepath:"/Spotify-Clone/songs/5.mp3",coverpath:"/Spotify-Clone/covers/5.jpg"},{songname:"LOFIN-scars",filepath:"/Spotify-Clone/songs/6.mp3",coverpath:"/Spotify-Clone/covers/6.jpg"},{songname:"Alone Tonight",filepath:"/Spotify-Clone/songs/7.mp3",coverpath:"/Spotify-Clone/covers/7.jpg"},{songname:"Godless-Ailow",filepath:"/Spotify-Clone/songs/8.mp3",coverpath:"/Spotify-Clone/covers/8.jpg"},{songname:"Hero's Ending",filepath:"/Spotify-Clone/songs/9.mp3",coverpath:"/Spotify-Clone/covers/9.jpg"},{songname:"Warrior-Marin Hox",filepath:"/Spotify-Clone/songs/10.mp3",coverpath:"/Spotify-Clone/covers/10.jpg"}]
+let audioElement = new Audio('songs/1.mp3');
+let songs = [
+    {songname: "FAVELA", filepath: "songs/1.mp3", coverpath: "covers/1.jpg"},
+    {songname: "Fearless Funk", filepath: "songs/2.mp3", coverpath: "covers/2.jpg"},
+    {songname: "Fly High", filepath: "songs/3.mp3", coverpath: "covers/3.jpg"},
+    {songname: "ALL IN MY HIGH", filepath: "songs/4.mp3", coverpath: "covers/4.jpg"},
+    {songname: "Where We Are", filepath: "songs/5.mp3", coverpath: "covers/5.jpg"},
+    {songname: "LOFIN-scars", filepath: "songs/6.mp3", coverpath: "covers/6.jpg"},
+    {songname: "Alone Tonight", filepath: "songs/7.mp3", coverpath: "covers/7.jpg"},
+    {songname: "Godless-Ailow", filepath: "songs/8.mp3", coverpath: "covers/8.jpg"},
+    {songname: "Hero's Ending", filepath: "songs/9.mp3", coverpath: "covers/9.jpg"},
+    {songname: "Warrior-Marin Hox", filepath: "songs/10.mp3", coverpath: "covers/10.jpg"}
+];
 let songItems=Array.from(document.getElementsByClassName('card'));
 console.log("Total Cards Found:", songItems.length);
 
