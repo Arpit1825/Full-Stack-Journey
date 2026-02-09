@@ -119,7 +119,7 @@ audioElement.addEventListener('loadedmetadata', ()=>{
         Totalsec="0"+Totalsec;
     }
     let totaltime=document.querySelector("#totaltime")
-    totaltime.innerText=`${Totalmin}:${Totalsec}`;
+    totaltime.innerText=`${Totalmin}:${Totalsec}`;//String interpulation using backtick
 });
 
 myProgressBar.addEventListener('change', ()=>{
@@ -230,4 +230,14 @@ playbtn.forEach((element) => {
     audioElement.play();
 });
 
+});
+
+let searchname=document.querySelector(".search");
+let inp=document.querySelector(".inp");
+inp.addEventListener("input",function(){
+    let availsong=songs.filter((Name) =>{
+        return Name.songname.startsWith(inp.value);
+
+    });
+    console.log(availsong);
 });
