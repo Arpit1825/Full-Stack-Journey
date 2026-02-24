@@ -239,5 +239,8 @@ inp.addEventListener("input",function(){
         return Name.songname.startsWith(inp.value);
 
     });
+    document.querySelector(".cards").innerText="";
     console.log(availsong);
 });
+
+
