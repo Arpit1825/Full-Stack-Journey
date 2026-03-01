@@ -29,7 +29,7 @@ function App() {
        setTimeout(()=>{
          setCoins(formattedData);
         setLoading(false);
-       },3000)
+       },2000)
         
       } catch (error) {
         console.error("Data fething problem occuring:", error);
