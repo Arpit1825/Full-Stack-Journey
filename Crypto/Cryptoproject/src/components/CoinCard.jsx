@@ -4,7 +4,10 @@
   return (
     
   <>
-    <div className="bg-gray-800  mx-[0] my-2 px-5 py-4 gap-3px rounded-lg shadow-md border border-gray-700 flex justify-between items-center">
+  
+  <div className="bg-gray-800/60 mx-[0] my-2 px-5 py-4 
+    gap-3px rounded-lg shadow-md border border-gray-700 
+    flex justify-between items-center">
       
       <div>
         {/* Coin ka naam aur symbol */}
@@ -21,6 +24,8 @@
       </div>
 
     </div>
+    
+    
   </>
   )
 
