@@ -1,10 +1,13 @@
+ import  {Link} from 'react-router-dom'
+import CoinDetail from './CoinDetail';
  export default function CoinCard(props){
-    console.log(props);
+    // console.log(props);
     const coin =props.coinData;
   return (
     
   <>
   
+ <Link to={`/coin/${coin.id}`}>
   <div className="bg-gray-800/60 mx-[0] my-2 px-5 py-4 
     gap-3px rounded-lg shadow-md border border-gray-700 
     flex justify-between items-center">
@@ -24,6 +27,7 @@
       </div>
 
     </div>
+ </Link>
     
     
   </>
