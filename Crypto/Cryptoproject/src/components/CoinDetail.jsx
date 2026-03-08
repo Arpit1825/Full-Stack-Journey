@@ -1,22 +1,43 @@
 import React from 'react'
 import { useParams,Link } from 'react-router-dom'
 import { useEffect,useState } from 'react';
+import Skeleton from './Skeleton';
+import CoinInfo from './coinInfo';
 function CoinDetail() {
     const {id}=useParams();//It is used to fetch value from url 
     const [coinData,setCoinData]=useState(null);
     const [loading,setLoading]=useState(true);
+    const [chartData,setChartData]=useState([]);
     useEffect(()=>{
-        fetch(`https://api.coingecko.com/api/v3/coins/${id}`)
-        .then(res=>res.json()).then(data=>{
-            setCoinData(data)
-            setLoading(false)
-        }).catch((err)=>{
+        setLoading(true);
+
+        Promise.all([fetch(`https://api.coingecko.com/api/v3/coins/${id}`),
+            fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=24`)])
+        .then(async([res1, res2]) => {
+    const detailData = await res1.json();
+    const chartRes = await res2.json();
+
+    console.log("Full Chart Response:", chartRes); // <--- Ye check karo
+    
+    setCoinData(detailData);
+    if(chartRes && chartRes.prices) {
+        setChartData(chartRes.prices);
+    }else{
+        console.log("Api has blocked for 2 minutes (429)");
+        
+    }
+    setLoading(false);
+}).catch((err)=>{
             console.log(err);
+            setLoading(false);
             
-        })
-    },[id])
+        });
+    },[id]);
+    console.log(chartData);
+    
     if (loading) {
-    return <div className='text-center text-4xl text-black mt-20'>Loading {id} data... ⏳</div>
+        
+    return <Skeleton />
   }
     return (
         <div className=' relative flex flex-col md:flex-row gap-10 p-5 md:p-10 bg-gray-900 text-white min-h-screen items-start '>
@@ -45,11 +66,14 @@ function CoinDetail() {
                 ${coinData.market_data.market_cap.usd.toLocaleString()}
             </p>
         </div>
+
+
     </div>
 
 
     {/* {right side} */}
             <div className='w-full md:w-3/3 mt-8 md:mt-5'>
+             <CoinInfo chartData={chartData}/>
                 <div className='mt-4 bg-yellow-500 rounded-lg text-gray-800 p-5 mx-10 '>
     <h2 className='text-3xl font-extrabold mb-4 border-b-2 border-gray-800/20 pb-2'>About {coinData.name}</h2>
     <p className='text-lg md:text-xl leading-relaxed' dangerouslySetInnerHTML={{ __html: coinData.description.en }}></p>
