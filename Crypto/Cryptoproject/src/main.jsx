@@ -4,6 +4,7 @@ import {createBrowserRouter,RouterProvider,createRoutesFromElements} from 'react
 import { Route} from 'react-router-dom'
 import CoinDetail from './components/CoinDetail.jsx'
 import ReactDOM from "react-dom/client"
+import { CurrencyProvider } from './contexts/CurrencyContext.jsx'
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -14,5 +15,7 @@ const router=createBrowserRouter(
   )
 )
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <CurrencyProvider>
+    <RouterProvider router={router} />
+  </CurrencyProvider>
 )

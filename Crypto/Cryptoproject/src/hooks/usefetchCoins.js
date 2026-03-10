@@ -20,10 +20,8 @@ const usefetchCoins=(apiUrl)=>{
         }));
 
         
-       setTimeout(()=>{
          setCoins(formattedData);
         setLoading(false);
-       },2000)
         
       } catch (error) {
         console.error("Data fething problem occuring:", error);

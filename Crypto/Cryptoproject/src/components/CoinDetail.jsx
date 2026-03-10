@@ -3,16 +3,18 @@ import { useParams,Link } from 'react-router-dom'
 import { useEffect,useState } from 'react';
 import Skeleton from './Skeleton';
 import CoinInfo from './coinInfo';
+import useCurrency from '../contexts/CurrencyContext';
 function CoinDetail() {
     const {id}=useParams();//It is used to fetch value from url 
     const [coinData,setCoinData]=useState(null);
     const [loading,setLoading]=useState(true);
     const [chartData,setChartData]=useState([]);
+    const {symbol}=useCurrency();
     useEffect(()=>{
         setLoading(true);
 
         Promise.all([fetch(`https://api.coingecko.com/api/v3/coins/${id}`),
-            fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=24`)])
+            fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${symbol}&days=24`)])
         .then(async([res1, res2]) => {
     const detailData = await res1.json();
     const chartRes = await res2.json();
@@ -55,7 +57,7 @@ function CoinDetail() {
         <div className='mt-8 w-full flex justify-between px-4 md:px-0 md:flex-col md:items-center'>
             <p className='text-xl text-gray-400 font-medium'>Current Price</p>
             <p className='text-3xl font-bold text-white md:mt-2'>
-                ${coinData.market_data.current_price.usd.toLocaleString()}
+                {symbol}{coinData.market_data.current_price.usd.toLocaleString()}
             </p>
         </div>
 
@@ -63,7 +65,7 @@ function CoinDetail() {
         <div className='mt-6 w-full flex justify-between px-4 md:px-0 md:flex-col md:items-center border-t border-gray-700 pt-6'>
             <p className='text-lg text-gray-400 font-medium'>Market Cap</p>
             <p className='text-2xl font-bold text-white md:mt-2'>
-                ${coinData.market_data.market_cap.usd.toLocaleString()}
+                {symbol}{coinData.market_data.market_cap.usd.toLocaleString()}
             </p>
         </div>
 

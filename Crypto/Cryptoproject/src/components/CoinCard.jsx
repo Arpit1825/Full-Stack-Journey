@@ -1,8 +1,11 @@
  import  {Link} from 'react-router-dom'
-import CoinDetail from './CoinDetail';
+import CoinDetail from './CoinDetail'
+import useCurrency from '../contexts/CurrencyContext';
  export default function CoinCard(props){
     // console.log(props);
     const coin =props.coinData;
+
+    const {symbol}=useCurrency();
   return (
     
   <>
@@ -20,10 +23,11 @@ import CoinDetail from './CoinDetail';
       
       <div className="text-right">
         {/* Coin ka price aur change */}
-        <p className="text-lg font-semibold text-white">${coin.price.toLocaleString()}</p>
-        <p className={`text-sm ${coin.change > 0 ? 'text-green-400' : 'text-red-400'}`}>
-          {coin.change > 0 ? '+' : ''}{coin.change}%
-        </p>
+        <p className="text-lg font-semibold text-white">{symbol}{coin.price.toLocaleString()}</p>
+       <p className={`text-sm ${coin.price > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                        {coin.change> 0 ? '+' : ''}
+                        {coin.change}%
+                    </p>
       </div>
 
     </div>
