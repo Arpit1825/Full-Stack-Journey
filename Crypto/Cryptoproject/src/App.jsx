@@ -50,13 +50,13 @@ function App() {
         <div className="flex jusify-center gap-6 mt-10 pb-10">
           <button onClick={()=>setPage(page-1)}
           disabled={page==1}
-          className="text-white px-6 py-2 font-semibold rounded-lg bg-gray-800 border border-gray-700 hover:bg-red-400 hover:text-gray-900 disabled:cursor-not-allowed transition-all shadow-md">
-           &larr; Previous
+          className="text-white px-2 py-3 font-semibold rounded-lg bg-gray-800 border border-gray-700 hover:bg-red-400 hover:text-gray-900 disabled:cursor-not-allowed transition-all shadow-md ">
+          &larr; Previous
           </button>
           <span className=' text-xl text-red-400 px-4 py-2 font-bold '>{page}</span>
           <button onClick={()=>setPage(page+1)}
           disabled={page==25}
-          className="px-6 py-2 text-white font-semibold rounded-lg bg-gray-800 border border-gray-700 hover:bg-red-400 hover:text-gray-900 transition-all shadow-md disabled:cursor-not-allowed">Next &rarr;</button>
+          className="px-4 py-3 text-white font-semibold rounded-lg bg-gray-800 border border-gray-700 hover:bg-red-400 hover:text-gray-900 transition-all shadow-md disabled:cursor-not-allowed">Next &rarr;</button>
         </div>
 
       </div>
