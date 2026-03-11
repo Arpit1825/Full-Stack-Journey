@@ -31,16 +31,16 @@ useEffect(()=>{
 },[todos])
     return (
     <TodoProvider value={{todos,addTodo,updateTodo,toggleComplete,deleteTodo}}>
-    <div className="flex justify-center items-center bg-rose-200 min-h-screen py-8">
-                <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-zinc-800">
-                    <h1 className="text-4xl font-bold text-center mb-8 mt-2">Todo App </h1>
-                    <h2 className=' text-2xl text-center mb-4'>Make your task ready with making Todo List</h2>
-                    <div className="mb-4">
+    <div className=" flex justify-center items-center bg-gradient-to-br from-rose-100 via-purple-100 to-teal-100 h-screen py-8">
+                <div className="bg-white/30 backdrop-blur-lg  border border-white/20 w-full max-w-2xl mx-auto shadow-2xl rounded-lg px-4 py-3 text-zinc-800">
+                    <h1 className="text-4xl font-bold tracking-tight text-center mb-8 mt-2">Todo App (Task Tracker)</h1>
+                    <h2 className=' text-2xl font-semibold text-center mb-4'>Make your task ready with making Todo List</h2>
+                    <div className="mb-8 transform hover:scale-[1.01] transition-transform">
                         <TodoForm /> 
                     </div>
                     <div className="flex flex-wrap gap-y-3">
                        {todos.map((todo)=>(
-                        <div key={todo.id} className='w-full'>
+                        <div key={todo.id} className='animate-in fade-in slide-in-from-bottom-4 duration-500 w-full'>
                             <TodoItem todo={todo}/>
                         </div>
                        ))}
