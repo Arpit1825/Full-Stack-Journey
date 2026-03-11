@@ -9,12 +9,13 @@ function CoinDetail() {
     const [coinData,setCoinData]=useState(null);
     const [loading,setLoading]=useState(true);
     const [chartData,setChartData]=useState([]);
-    const {symbol}=useCurrency();
+    const {currency,symbol}=useCurrency();
     useEffect(()=>{
         setLoading(true);
+        setChartData([]);
 
         Promise.all([fetch(`https://api.coingecko.com/api/v3/coins/${id}`),
-            fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${symbol}&days=24`)])
+            fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=14`)])
         .then(async([res1, res2]) => {
     const detailData = await res1.json();
     const chartRes = await res2.json();
@@ -34,7 +35,7 @@ function CoinDetail() {
             setLoading(false);
             
         });
-    },[id]);
+    },[id,symbol]);
     console.log(chartData);
     
     if (loading) {
