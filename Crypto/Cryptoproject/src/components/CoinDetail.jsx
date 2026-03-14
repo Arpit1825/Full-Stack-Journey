@@ -4,12 +4,18 @@ import { useEffect,useState } from 'react';
 import Skeleton from './Skeleton';
 import CoinInfo from './coinInfo';
 import useCurrency from '../contexts/CurrencyContext';
+import { useDispatch } from 'react-redux';
+import { addTowatchlist } from '../features/watchlist/watchlistSlice';
+import { useSelector } from 'react-redux';
 function CoinDetail() {
     const {id}=useParams();//It is used to fetch value from url 
     const [coinData,setCoinData]=useState(null);
     const [loading,setLoading]=useState(true);
     const [chartData,setChartData]=useState([]);
     const {currency,symbol}=useCurrency();
+    const [checkStatus,checkAddedStatus]=useState('');
+    const dispatch=useDispatch();
+    const watchlistItems = useSelector((state) => state.watchlist.items);
     useEffect(()=>{
         setLoading(true);
         setChartData([]);
@@ -20,7 +26,7 @@ function CoinDetail() {
     const detailData = await res1.json();
     const chartRes = await res2.json();
 
-    console.log("Full Chart Response:", chartRes); // <--- Ye check karo
+     // <--- Ye check karo
     
     setCoinData(detailData);
     if(chartRes && chartRes.prices) {
@@ -36,12 +42,24 @@ function CoinDetail() {
             
         });
     },[id,symbol]);
-    console.log(chartData);
     
     if (loading) {
         
     return <Skeleton />
   }
+  
+  const handleAddTowatchlist=()=>{
+    const isPresent =watchlistItems.find(item => item.id === coinData.id);
+    
+    if (isPresent) {
+        checkAddedStatus("Already in Watchlist!");
+    } else {
+        dispatch(addTowatchlist(coinData));
+        checkAddedStatus("Successfully Added!");
+    }
+
+    setTimeout(() => checkAddedStatus(''), 2000);
+};
     return (
         <div className=' relative flex flex-col md:flex-row gap-10 p-5 md:p-10 bg-gray-900 text-white min-h-screen items-start '>
            
@@ -69,7 +87,11 @@ function CoinDetail() {
                 {symbol}{coinData.market_data.market_cap.usd.toLocaleString()}
             </p>
         </div>
-
+        {/* Add to favourites */}
+        <button onClick={handleAddTowatchlist} className='mt-4 font-semibold text-[19px] text-gray-900 bg-gray-200 rounded-lg w-39 hover:bg-yellow-400 border borderbg-white-200 '>
+            Add to watchlist
+        </button>
+        <p className="mt-3 text-green-400 font-bold animate-pulse flex items-center gap-2">{checkStatus}</p>
 
     </div>
 

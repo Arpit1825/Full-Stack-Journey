@@ -4,12 +4,14 @@ import CoinCard from './components/CoinCard'
 import Shimmercoins from './components/Shimmercoins'
 import usefetchCoins from './hooks/usefetchCoins'
 import useCurrency from './contexts/CurrencyContext'
+import Watchlist from './components/Watchlist'
 function App() {
   const [search,setSearch]=useState('');
   const {currency,setCurrency}=useCurrency();
   const [page,setPage]=useState(1);
   const {coins,loading}=usefetchCoins(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=25&page=${page}&sparkline=false`);
   const {symbol,setSymbol}=useCurrency();
+  const [open,setOpen]=useState(false);
 
   return (
     <div className=" relative min-h-screen p-8 overflow-hidden">
@@ -27,14 +29,19 @@ function App() {
            className=' text-white border border-gray-700 bg-gray-800 rounded-lg w-[300px] h-[45px] mx-2 outline-none focus:border-red-400'
            value={search} onChange={(e)=>setSearch(e.target.value)} />
         </div>
-
+        <button 
+  onClick={() => setOpen(true)}
+  className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-bold hover:bg-yellow-500 transition-all mx-4"
+>
+  ⭐ Watchlist
+</button>
         <select  className="bg-gray-800 text-white  border border-gray-700 p-3 rounded-lg outline-none cursor-pointer focus:border-red-400"value={currency} onChange={(e)=>setCurrency(e.target.value)}>
           <option value="inr">INR</option>
           <option value="usd">USD</option>
         </select>
         
         <h1 className='text-[40px] text-red-400 font-bold mb-8'>Crypto Tracker Test</h1>
-
+        <Watchlist open={open} setOpen={setOpen} />
         <div>
           {loading ? (
              Array(10).fill(0).map((_,i)=><Shimmercoins key={i}/>)
@@ -46,7 +53,7 @@ function App() {
             })
           )}
         </div>
-
+        
         <div className="flex jusify-center gap-6 mt-10 pb-10">
           <button onClick={()=>setPage(page-1)}
           disabled={page==1}
